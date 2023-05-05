@@ -19,21 +19,20 @@ function fiveHeadsSync() {
   return attempts;
 }
 
-// console.log(fiveHeadsSync());
-// console.log("This is run after the fiveHeadsSync function completes");
-
+// console.log( fiveHeadsSync() );
+// console.log( "This is run after the fiveHeadsSync function completes" );
 
 function fiveHeads() {
-  return new Promise((resolve, reject) => {
+  return new Promise( ( resolve, reject ) => {
     let attempts = fiveHeadsSync()
     if (attempts <= 100) {
-      resolve(`(resolve) It took less than 100 attempts to roll 5 heads in a row! It took: ${attempts} attempts`)
+      resolve(`(resolve) It took less than 100 attempts to roll 5 heads in a row! (${attempts} attempts)`)
     } else {
-      reject(`(reject) It took over 100 attempts to roll 5 heads in a row! It took: ${attempts} attempts`)
+      reject(`(reject) It took over 100 attempts to roll 5 heads in a row! (${attempts} attempts)`)
     }
   });
 }
 fiveHeads()
-  .then((res) => console.log(res))
-  .catch((err) => console.log(err));
-console.log("When does this run now?");
+  .then( res => console.log(res) )
+  .catch( err => console.log(err) );
+console.log( "When does this run now?" );
